@@ -1,0 +1,115 @@
+
+
+.tarjeta {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(45deg, rgb(233, 200, 112), rgb(235,71,71));
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    margin: .6rem;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    flex-wrap: wrap;
+    
+    transition: all 0.5s;
+    
+}
+
+.tarjeta-contenido {
+    width: 3rem;
+    height: 3rem;
+    background-color: ivory;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 1.4rem;
+       }
+
+.descubrir {
+    transform: rotateY(180deg);
+    
+}
+
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+align-items: center;
+justify-content: center;
+max-width: 20rem;
+flex-wrap: wrap;
+max-height: 10rem;
+}
+
+.acertada {
+    opacity: 0;
+}
+
+.error {
+    
+    animation: error 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.acertada .tarjeta-contenido {
+    animation: acierto 1.3s ease-in-out forwards;
+}
+
+@keyframes error {
+
+    10%,
+    90% {
+        transform: rotateY(180deg) translateX(-1px);
+    }
+
+    20%,
+    80% {
+        transform: rotateY(180deg) translateX(2px);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: rotateY(180deg) translateX(-4px);
+    }
+
+    40%,
+    60% {
+        transform: rotateY(180deg) translateX(4px);
+    }
+}
+
+@keyframes acierto {
+    from {
+        transform: rotateY(-180deg) scale3d(1, 1, 1);
+        opacity: 1;
+    }
+
+    25% {
+        transform: rotateY(-180deg) scale3d(1.1, 1.1, 1.1);
+        opacity: 1;
+    }
+
+    to {
+        transform: rotateY(-180deg) scale3d(1, 1, 1);
+        opacity: 0;
+    }
+}
